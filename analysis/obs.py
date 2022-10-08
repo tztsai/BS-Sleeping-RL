@@ -39,7 +39,7 @@ const_stats
 
 # %%
 mean_stats, std_stats = [pd.DataFrame(Net.annotate_obs(pd.read_csv(f).values.T)) 
-                         for f in glob.glob('*(*, 4*)_*.csv')]
+                         for f in glob.glob('*(*, 8*)_*.csv')]
 
 
 mean_stats = mean_stats.iloc[0,:Net.global_obs_dim]

@@ -151,7 +151,7 @@ class MappoPolicy:
         actions, _, actor_rnn_state = self.actor(
             obs, actor_rnn_state, masks, available_actions, deterministic)
         if self._count_flops:
-            self.actor.act._deterministic = True
+            # self.actor.act._deterministic = True
             self._flops += self._count_flops(self.actor, obs)
         self._actor_rnn_state = actor_rnn_state
         return actions.cpu().numpy()

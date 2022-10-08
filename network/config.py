@@ -6,14 +6,14 @@ renderMode = 'none'
 # base station params
 numBS = 7
 interBSDist = 400  # the distance between two adjacent BSs
-cellRadius = 600  # the radius of a hexagon cell in meters
-txPower = 0.4  # average transmit power per antenna in watts
+# cellRadius = 750  # the radius of a hexagon cell in meters
+txPower = 0.3  # average transmit power per antenna in watts
 maxPAPower = 8  # maximum antenna power in watts
-fixedPC = 18  # load-independent power consumption in watts
+fixedPC = 20  # load-independent power consumption in watts
 bsFrequency = 5e9  # carrier frequency in Hz
 feederLoss = 1  # feeder loss in dB (XXX: include in antennaGain)
 antennaGain = 19 - feederLoss  # power gain in dB of each antenna of a BS
-signalThreshold = 7.94e-12  # signal threshold in watts
+signalThreshold = 1e-12  # signal threshold in watts
 maxAntennas = 64  # max number of antennas
 minAntennas = 16  # min number of antennas
 bandWidth = 20e6  # communication bandwidth in Hz
@@ -51,22 +51,11 @@ bsPositions = np.vstack([
     #      for a in np.linspace(0, 2*np.pi, 13)[:-1]]),
 ])
 
-# # obs names
-# public_obs_keys = ['pc', 'num_antennas', 'responding', 'sleep_mode']
-# hist_stats_keys = ['arrival_rate']
-# ue_groups = ['serving', 'queued', 'idle']
-# ue_stats_keys = ['num', 'sum_rate', 'sum_rate_req', 'sum_tx_power', 'num_urgent']
-# private_obs_keys = ['next_sleep_mode', 'wakeup_time',
-#                     *[f'{k}{i}' for i in range(-bufferNumChunks, 0) for k in hist_stats_keys],
-#                     *[f'{u}_{k}' for u in ue_groups for k in ue_stats_keys]]
-# mutual_obs_keys = ['dist', 'arrival_rate', *ue_stats_keys]
-# other_obs_keys = [f'nb{i}_{k}' for i in range(numBS - 1) for k in public_obs_keys + mutual_obs_keys]
-# all_obs_keys = public_obs_keys + private_obs_keys + other_obs_keys
-
+# obs names
 public_obs_keys = ['pc', 'num_antennas', 'responding', 'sleep_mode']
 hist_stats_keys = ['arrival_rate']
-ue_groups = ['covered', 'serving', 'queued', 'idle']
-ue_stats_keys = ['num', 'sum_rate', 'sum_rate_req', 'max_rate_req', 'sum_tx_power', 'min_time_lim']
+ue_groups = ['serving', 'queued', 'idle']
+ue_stats_keys = ['num', 'sum_rate', 'sum_rate_req', 'sum_tx_power', 'num_urgent']
 private_obs_keys = ['next_sleep_mode', 'wakeup_time',
                     *[f'{k}{i}' for i in range(-bufferNumChunks, 0) for k in hist_stats_keys],
                     *[f'{u}_{k}' for u in ue_groups for k in ue_stats_keys]]
