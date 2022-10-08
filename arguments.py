@@ -323,4 +323,6 @@ def get_env_config():
                         help="weight of power consumption in reward")
     parser.add_argument("--w_delay", type=float,
                         help="weight of avg delay per UE in reward")
+    parser.add_argument("--w_drop", type=float,
+                        help="weight of packet drop rate in reward")
     return parser
