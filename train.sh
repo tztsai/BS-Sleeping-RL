@@ -21,7 +21,7 @@ num_mini_batch=1
 w_pc=0.001
 # w_qos=5
 # w_xqos=0.004
-w_drop=10
+w_drop=5
 w_delay=0.1
 
 log_interval=1
