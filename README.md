@@ -1,6 +1,6 @@
 # Energy-Efficient Collaborative Base Station Control in Massive MIMO Cellular Networks
 
-This repository is associated with the publication "[Energy-Efficient Collaborative Base Station Control in Massive MIMO Cellular Networks: A Multi-Agent Reinforcement Learning Approach](https://ieeexplore.ieee.org/document/10624787)". This work provides a Multi-Agent Reinforcement Learning (MARL) approach to minimize the total energy consumption of multiple massive MIMO base stations (BSs) in a multi-cell network, while maintaining overall quality-of-service.
+This repository is associated with the publication "[Multi-agent Reinforcement Learning for Energy Saving in Multi-Cell Massive MIMO Systems](https://ieeexplore.ieee.org/document/10624787)". This work provides a Multi-Agent Reinforcement Learning (MARL) approach to minimize the total energy consumption of multiple massive MIMO base stations (BSs) in a multi-cell network, while maintaining overall quality-of-service.
 
 The strategy involves making decisions on multi-level advanced sleep modes, antenna switching, and user association for the base stations. By modelling the problem as a decentralized partially observable Markov decision process (DEC-POMDP), we propose a multi-agent proximal policy optimization (MAPPO) algorithm to obtain a collaborative BS control policy.
 
